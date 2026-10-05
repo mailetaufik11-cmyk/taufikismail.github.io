@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taufik Ismail Shobirin, S.Pd. — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --primary: #1e3a8a;
+    --primary-light: #3b82f6;
+    --accent: #06b6d4;
+    --dark: #0f172a;
+    --gray: #64748b;
+    --light: #f8fafc;
+    --border: #e2e8f0;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark);
+    background: var(--light);
+    line-height: 1.6;
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+    padding: 1rem 2rem;
+  }
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.1rem;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--primary-light); }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary);
+    cursor: pointer;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem 3rem;
+    background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+  }
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+  }
+  .hero-text h1 span { color: var(--primary-light); }
+  .hero-text .tagline {
+    font-size: 1.15rem;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  .hero-text p { color: var(--gray); margin-bottom: 2rem; }
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .contact-info a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    background: white;
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 0.9rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, color 0.3s;
+  }
+  .contact-info a:hover {
+    transform: translateY(-3px);
+    color: var(--primary-light);
+  }
+  .contact-info i { color: var(--primary-light); }
+
+  .btn {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(59,130,246,0.3);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    margin-left: 0.5rem;
+  }
+  .btn-outline:hover { background: var(--primary); color: white; }
+
+  .hero-photo {
+    display: flex;
+    justify-content: center;
+  }
+  .photo-frame {
+    width: 320px;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(30,58,138,0.25);
+    border: 6px solid white;
+    background: #dc2626;
+    position: relative;
+  }
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ===== SECTIONS ===== */
+  section { padding: 5rem 2rem; }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+  }
+  .section-subtitle {
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 3rem;
+    font-size: 1rem;
+  }
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-light);
+    margin: 0.8rem auto 0;
+    border-radius: 2px;
+  }
+
+  /* ===== ABOUT ===== */
+  #about { background: white; }
+  .about-text {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.05rem;
+    color: var(--gray);
+    line-height: 1.9;
+  }
+  .about-text strong { color: var(--primary); }
+
+  /* ===== SKILLS ===== */
+  #skills { background: var(--light); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .skill-card {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid var(--primary-light);
+  }
+  .skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(30,58,138,0.15);
+  }
+  .skill-card .icon {
+    width: 50px; height: 50px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .skill-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark);
+  }
+  .skill-card p {
+    font-size: 0.9rem;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  /* ===== EXPERIENCE TIMELINE ===== */
+  #experience { background: white; }
+  .timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--primary-light), var(--accent));
+    border-radius: 2px;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 2rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.55rem;
+    top: 0.5rem;
+    width: 16px; height: 16px;
+    background: white;
+    border: 3px solid var(--primary-light);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.15);
+  }
+  .timeline-date {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    background: #eff6ff;
+    padding: 0.3rem 0.9rem;
+    border-radius: 50px;
+    margin-bottom: 0.6rem;
+  }
+  .timeline-item h3 {
+    font-size: 1.15rem;
+    color: var(--dark);
+    margin-bottom: 0.2rem;
+  }
+  .timeline-item h4 {
+    font-size: 0.95rem;
+    color: var(--gray);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+  .timeline-item ul {
+    list-style: none;
+    padding: 0;
+  }
+  .timeline-item ul li {
+    position: relative;
+    padding-left: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.92rem;
+    color: var(--gray);
+  }
+  .timeline-item ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  /* ===== PROJECTS ===== */
+  #projects { background: var(--light); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.8rem;
+  }
+  .project-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(30,58,138,0.15);
+  }
+  .project-header {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    padding: 1.5rem;
+    color: white;
+  }
+  .project-header i {
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+  .project-header h3 { font-size: 1.05rem; font-weight: 600; }
+  .project-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .project-body p {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  .tag {
+    font-size: 0.75rem;
+    background: #eff6ff;
+    color: var(--primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 50px;
+    font-weight: 500;
+  }
+  .project-result {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #059669;
+    background: #ecfdf5;
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    border-left: 3px solid #059669;
+  }
+
+  /* ===== EDUCATION ===== */
+  #education { background: white; }
+  .edu-card {
+    max-width: 850px;
+    margin: 0 auto;
+    background: var(--light);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary-light);
+  }
+  .edu-card h3 { color: var(--dark); font-size: 1.2rem; margin-bottom: 0.3rem; }
+  .edu-card .edu-meta {
+    color: var(--primary-light);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .edu-card p { color: var(--gray); font-size: 0.95rem; margin-bottom: 1rem; }
+  .courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .courses span {
+    font-size: 0.8rem;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    color: var(--gray);
+    border: 1px solid var(--border);
+  }
+
+  /* ===== CERTS ===== */
+  #certifications { background: var(--light); }
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .cert-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s;
+  }
+  .cert-card:hover { transform: translateY(-4px); }
+  .cert-card .cert-icon {
+    width: 50px; height: 50px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  .cert-card h4 { font-size: 0.95rem; color: var(--dark); margin-bottom: 0.2rem; }
+  .cert-card p { font-size: 0.82rem; color: var(--gray); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem 2rem;
+  }
+  footer h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+  footer p { color: #94a3b8; font-size: 0.9rem; margin-bottom: 1.5rem; }
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    width: 45px; height: 45px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .footer-links a:hover {
+    background: var(--primary-light);
+    transform: translateY(-4px);
+  }
+  footer .copyright {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    font-size: 0.82rem;
+    color: #64748b;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .hero-container { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
+    .contact-info { justify-content: center; }
+    .hero-photo { order: -1; }
+    .photo-frame { width: 240px; height: 300px; }
+    .hero-text h1 { font-size: 2rem; }
+  }
+  @media (max-width: 640px) {
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      background: white;
+      flex-direction: column;
+      padding: 1rem 2rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      gap: 1rem;
+    }
+    .nav-links.active { display: flex; }
+    .menu-toggle { display: block; }
+    section { padding: 3.5rem 1.2rem; }
+    .section-title { font-size: 1.6rem; }
+    .hero { padding: 5rem 1.2rem 2rem; }
+    .hero-text h1 { font-size: 1.7rem; }
+    .photo-frame { width: 200px; height: 250px; }
+    .timeline { padding-left: 1.5rem; }
+    .timeline-item { padding-left: 1.5rem; }
+    .timeline-item::before { left: -2.05rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">Taufik Ismail S.</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">Profil</a></li>
+      <li><a href="#skills">Keahlian</a></li>
+      <li><a href="#experience">Pengalaman</a></li>
+      <li><a href="#projects">Proyek</a></li>
+      <li><a href="#education">Pendidikan</a></li>
+      <li><a href="#certifications">Sertifikasi</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-text fade-in">
+      <h1>TAUFIK ISMAIL<br><span>SHOBIRIN, S.Pd.</span></h1>
+      <p class="tagline">Electrical Engineering Graduate | IoT | Machine Learning | Telecommunications</p>
+      <p>
+        Lulusan Teknik Elektro (Telekomunikasi) dengan pengalaman R&D pada sistem IoT 
+        dan machine learning. Berfokus pada integrasi ESP32/Raspberry Pi, 
+        Wi-Fi Fingerprinting, dan estimasi posisi indoor berbasis MLP.
+      </p>
+      <div class="contact-info">
+        <a href="mailto:mailetaufik11@gmail.com"><i class="fas fa-envelope"></i> mailetaufik11@gmail.com</a>
+        <a href="tel:+628996948942"><i class="fas fa-phone"></i> +62 899-694-8942</a>
+        <a href="https://linkedin.com/in/taufikismailshobirin" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i> Bandung, Indonesia</a>
+      </div>
+      <a href="#projects" class="btn">Lihat Proyek <i class="fas fa-arrow-right"></i></a>
+      <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+    </div>
+    <div class="hero-photo fade-in">
+      <div class="photo-frame">
+        <img src="foto-taufik.jpg" alt="Taufik Ismail Shobirin"
+             onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:white;font-size:4rem;\'><i class=\'fas fa-user-tie\'></i></div>';">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">Profil</h2>
+    <p class="section-subtitle">Tentang Saya</p>
+    <p class="about-text fade-in">
+      Saya adalah <strong>lulusan Teknik Elektro (Telekomunikasi)</strong> dari Universitas Pendidikan Indonesia 
+      dengan IPK <strong>3,67/4,00</strong>. Saya memiliki pengalaman riset dan pengembangan pada 
+      <strong>sistem IoT</strong> dan <strong>machine learning</strong>, termasuk integrasi ESP32/Raspberry Pi 
+      dengan berbagai sensor dan kamera. Penelitian skripsi saya berfokus pada 
+      <strong>estimasi posisi indoor berbasis Wi-Fi Fingerprinting dan MLP</strong> dengan hasil 
+      Mean Euclidean Error <strong>0,77 meter</strong> dan Floor Accuracy <strong>99,46%</strong>. 
+      Saya terbiasa melakukan pengujian prototipe, survei lapangan, dan penyusunan laporan teknis.
+    </p>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Keahlian</h2>
+    <p class="section-subtitle">Technical & Soft Skills</p>
+    <div class="skills-grid">
+      <div class="skill-card fade-in">
+        <div class="icon"><i class="fas fa-microchip"></i></div>
+        <h3>IoT & Embedded</h3>
+        <p>ESP32, Raspberry Pi, Arduino IDE, W5500, Sensor Integration</p>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="icon"><i class="fas fa-code"></i></div>
+        <h3>Programming & Data</h3>
+        <p>Python, SQL, Pandas, NumPy, Scikit-learn, Matplotlib, Excel, MATLAB</p>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="icon"><i class="fas fa-brain"></i></div>
+        <h3>Machine Learning</h3>
+        <p>MLP, CNN, Data Preprocessing, Model Evaluation (MSE, MAE, MEE)</p>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="icon"><i class="fas fa-wifi"></i></div>
+        <h3>Networking</h3>
+        <p>Wi-Fi Fingerprinting, RSSI Analysis, LAN / Ethernet</p>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="icon"><i class="fas fa-users"></i></div>
+        <h3>Soft Skills</h3>
+        <p>Analytical Thinking, Problem Solving, Teamwork, Communication, Adaptability</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title">Pengalaman Kerja</h2>
+    <p class="section-subtitle">Research & Development</p>
+    <div class="timeline">
+      <div class="timeline-item fade-in">
+        <span class="timeline-date">Juni 2025 – November 2025</span>
+        <h3>Research & Development Intern</h3>
+        <h4>PT Syergie Indo Prima — Bandung, Jawa Barat</h4>
+        <ul>
+          <li>Mengintegrasikan ESP32, Raspberry Pi, sensor pH, TDS, turbiditas, suhu, dan kamera untuk mendukung akuisisi data lingkungan real-time pada sistem monitoring kualitas air dan deteksi dini kerusakan terumbu karang.</li>
+          <li>Menerapkan Neural Network pada data sensor kualitas air dan CNN pada citra untuk mengklasifikasikan kondisi terumbu karang.</li>
+          <li>Membangun dan menguji sistem dengan Python dan Arduino IDE, termasuk komunikasi antara mikrokontroler, sensor, Raspberry Pi, dan perangkat jaringan.</li>
+          <li>Menguji modul W5500 sebagai Ethernet controller sehingga ESP32 dapat mengirim data melalui jaringan LAN (RJ45).</li>
+          <li>Mendukung pengujian prototipe dan survei lapangan di perairan Bangka Belitung, serta menyusun laporan teknis hasil penelitian.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Proyek & Riset</h2>
+    <p class="section-subtitle">Portofolio Penelitian</p>
+    <div class="projects-grid">
+
+      <div class="project-card fade-in">
+        <div class="project-header">
+          <i class="fas fa-map-marked-alt"></i>
+          <h3>Estimasi Lokasi Perangkat Mobile Indoor</h3>
+        </div>
+        <div class="project-body">
+          <p>Mengumpulkan data RSSI Wi-Fi pada beberapa titik referensi, melakukan preprocessing, pelabelan, normalisasi, dan analisis dataset dengan Python. Membangun model MLP untuk memprediksi koordinat posisi perangkat.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">Neural Network</span>
+            <span class="tag">Wi-Fi Fingerprinting</span>
+          </div>
+          <div class="project-result">
+            <i class="fas fa-trophy"></i> MEE 0,77 m · Floor Accuracy 99,46%
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="project-header">
+          <i class="fas fa-cube"></i>
+          <h3>Estimasi Posisi 3D Berbasis Wi-Fi Fingerprinting</h3>
+        </div>
+        <div class="project-body">
+          <p>Memperluas estimasi lokasi menjadi posisi 3D (X, Y, Z) dengan dataset multi-perangkat, multi-gedung, dan multi-lantai. Menganalisis pengaruh multipath, shadowing, dan obstruction terhadap karakteristik RSSI.</p>
+          <div class="project-tags">
+            <span class="tag">Research Assistant</span>
+            <span class="tag">3D Positioning</span>
+            <span class="tag">LTE</span>
+            <span class="tag">Wi-Fi</span>
+          </div>
+          <div class="project-result">
+            <i class="fas fa-flask"></i> Riset Berjalan (2026)
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="project-header">
+          <i class="fas fa-water"></i>
+          <h3>Sistem Deteksi Dini Kerusakan Terumbu Karang</h3>
+        </div>
+        <div class="project-body">
+          <p>Mengembangkan perangkat keras, sensor, dan sistem akuisisi data untuk pemantauan ekosistem terumbu karang berbasis citra digital dan IoT. Diuji agar pengambilan data sesuai kebutuhan penelitian.</p>
+          <div class="project-tags">
+            <span class="tag">IoT</span>
+            <span class="tag">CNN</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Hak Cipta</span>
+          </div>
+          <div class="project-result">
+            <i class="fas fa-certificate"></i> Hak Cipta No. 000962051
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+<section id="education">
+  <div class="container">
+    <h2 class="section-title">Pendidikan</h2>
+    <p class="section-subtitle">Riwayat Akademik</p>
+    <div class="edu-card fade-in">
+      <h3>Universitas Pendidikan Indonesia</h3>
+      <p class="edu-meta">Sarjana Pendidikan (S.Pd.) — Pendidikan Teknik Elektro, Konsentrasi Telekomunikasi</p>
+      <p><strong>September 2022 – Juni 2026</strong> | IPK <strong>3,67 / 4,00</strong></p>
+      <p style="margin-bottom:0.6rem;"><strong>Mata kuliah relevan:</strong></p>
+      <div class="courses">
+        <span>Sistem Komunikasi Analog & Digital</span>
+        <span>Sistem Komunikasi Satelit & Terrestrial</span>
+        <span>Sistem Radar</span>
+        <span>Jaringan Telekomunikasi</span>
+        <span>Pengolahan Sinyal Digital</span>
+        <span>Antena & Propagasi</span>
+        <span>Sistem Mikroprosesor</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CERTIFICATIONS ===== -->
+<section id="certifications">
+  <div class="container">
+    <h2 class="section-title">Sertifikasi & Pelatihan</h2>
+    <p class="section-subtitle">Pengembangan Diri</p>
+    <div class="certs-grid">
+      <div class="cert-card fade-in">
+        <div class="cert-icon"><i class="fas fa-bullhorn"></i></div>
+        <div>
+          <h4>Entrepreneurial Digital Marketing</h4>
+          <p>MarkPlus ASEAN — 2025</p>
+        </div>
+      </div>
+      <div class="cert-card fade-in">
+        <div class="cert-icon"><i class="fas fa-language"></i></div>
+        <div>
+          <h4>Short Course TOEFL Preparation</h4>
+          <p>Balai Bahasa UPI — 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="contact">
+  <h3>Taufik Ismail Shobirin, S.Pd.</h3>
+  <p>Mari berkolaborasi dalam riset dan pengembangan teknologi IoT & Machine Learning</p>
+  <div class="footer-links">
+    <a href="mailto:mailetaufik11@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="tel:+628996948942" title="Telepon"><i class="fas fa-phone"></i></a>
+    <a href="https://linkedin.com/in/taufikismailshobirin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" title="Lokasi"><i class="fas fa-map-marker-alt"></i></a>
+  </div>
+  <div class="copyright">
+    © 2026 Taufik Ismail Shobirin. All rights reserved.
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({
+          top: target.offsetTop - 70,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
